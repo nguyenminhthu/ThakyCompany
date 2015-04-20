@@ -1,0 +1,110 @@
+﻿body {
+    padding-bottom: 20px;
+    background-color: #ccfacc;
+}
+
+.container {
+    max-width: 960px;
+    min-width: 200px;
+}
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/*
+    Customerize    UI
+*/
+.headerbackground {
+    border-radius: 5px 5px 0 0;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-bottom: 1px solid #dbdbdb;
+    /*background-color: #d6d4d4;*/
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(224,224,224,1) 99%, rgba(255,255,255,1) 99%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(99%,rgba(224,224,224,1)), color-stop(99%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(224,224,224,1) 99%,rgba(255,255,255,1) 99%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(224,224,224,1) 99%,rgba(255,255,255,1) 99%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(224,224,224,1) 99%,rgba(255,255,255,1) 99%,rgba(255,255,255,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(224,224,224,1) 99%,rgba(255,255,255,1) 99%,rgba(255,255,255,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
+
+.navbar-Green {
+    background-color: #04a44b;
+    border: none;
+}
+
+a {
+    color: white;
+}
+
+.navbar-Green a:hover {
+    color: #05eb6a;
+}
+
+.navbar-toggle .icon-bar {
+    background-color: white;
+}
+
+.language {
+}
+
+    .language li {
+        float: left;
+        list-style: none;
+    }
+
+.panel .list-group a {
+    color: #626262;
+}
+
+    .panel .list-group a:hover {
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+.panel .list-group li:hover {
+    background-color: green;
+    color: white !important;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/*---------------------------*/
