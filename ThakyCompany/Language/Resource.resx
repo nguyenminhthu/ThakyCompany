@@ -117,10 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AboutUs" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="AddressValue" xml:space="preserve">
+    <value>Address: 11/26 Ly Tu Trong Str, Tay Son, PleiKu, Gia Lai</value>
+  </data>
+  <data name="Agency" xml:space="preserve">
+    <value>Agency</value>
+  </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>ThaKyCompany</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>miratea@thakycompany.com</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="NewProducts" xml:space="preserve">
+    <value>New Products</value>
+  </data>
   <data name="News" xml:space="preserve">
     <value>News</value>
   </data>
-  <data name="String1" xml:space="preserve">
-    <value>Hello</value>
+  <data name="Phone" xml:space="preserve">
+    <value>Phone : 093 78 58 788</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
   </data>
 </root>

@@ -39,6 +39,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -107,12 +115,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.1.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -161,6 +163,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ChangeLanguageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -174,19 +178,40 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.vi.resx</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504230952473_AddTableProductNewsPage.cs" />
+    <Compile Include="Migrations\201504230952473_AddTableProductNewsPage.Designer.cs">
+      <DependentUpon>201504230952473_AddTableProductNewsPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\News.cs" />
+    <Compile Include="Models\NewsDto.cs" />
+    <Compile Include="Models\Page.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductDto.cs" />
+    <Compile Include="Models\ThakyContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\banner.png" />
+    <Content Include="Content\Images\bg-white.gif" />
     <Content Include="Content\Images\Carousel\main-slide-1.jpg" />
     <Content Include="Content\Images\Carousel\main-slide-2.jpg" />
     <Content Include="Content\Images\Carousel\main-slide-3.jpg" />
     <Content Include="Content\Images\Carousel\main-slide-4.jpg" />
+    <Content Include="Content\Images\LeafIcon.png" />
     <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\logo1.png" />
+    <Content Include="Content\Images\Products\Product.jpg" />
+    <Content Include="Content\Images\Products\Product1.jpg" />
+    <Content Include="Content\Images\Products\Product2.jpg" />
+    <Content Include="Content\Images\TextMira.png" />
+    <Content Include="Content\Images\TextMoringa.png" />
     <Content Include="Content\Images\United-states-flag.png" />
     <Content Include="Content\Images\Vietnam-flag.png" />
     <Content Include="favicon.ico" />
@@ -232,6 +257,12 @@
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout_Product.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\Detail.cshtml" />
+    <Content Include="Views\Shared\_NewsMenu.cshtml" />
+    <Content Include="Views\News\Detail.cshtml" />
+    <Content Include="Views\Shared\_ProductMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -251,6 +282,9 @@
     <EmbeddedResource Include="Language\Resource.vi.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.vi.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504230952473_AddTableProductNewsPage.resx">
+      <DependentUpon>201504230952473_AddTableProductNewsPage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

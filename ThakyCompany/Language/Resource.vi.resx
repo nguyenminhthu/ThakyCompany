@@ -117,10 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AboutUs" xml:space="preserve">
+    <value>Giới thiệu</value>
+  </data>
+  <data name="AddressValue" xml:space="preserve">
+    <value>Địa chỉ : 11/26 Lý Tự Trọng, Tây Sơn, Pleiku, Gia Lai</value>
+  </data>
+  <data name="Agency" xml:space="preserve">
+    <value>Đại lý</value>
+  </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>Cơ sở trà Thần Kỳ</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Liên hệ</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>miratea@thakycompany.com</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Trang chủ</value>
+  </data>
+  <data name="NewProducts" xml:space="preserve">
+    <value>Sản phẩm mới</value>
+  </data>
   <data name="News" xml:space="preserve">
     <value>Tin tức</value>
   </data>
-  <data name="String1" xml:space="preserve">
-    <value>Xin chao</value>
+  <data name="Phone" xml:space="preserve">
+    <value>Điện thoại : 093 78 58 788</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>Sản phẩm</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Tìm kiếm</value>
   </data>
 </root>

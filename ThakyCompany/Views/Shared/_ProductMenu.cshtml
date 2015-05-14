@@ -1,0 +1,17 @@
+﻿@using ThakyCompany.Language
+@model List<ThakyCompany.Models.ProductDto>
+<div class="panel panel-default">
+    <div class="panel-heading boxtitle">
+        <h3 class="panel-title">@Resource.Product</h3>
+    </div>
+    <!-- List group -->
+    <ul class="list-group">
+
+        @foreach (var item in Model)
+        {
+            <li class="list-group-item">
+                @Html.ActionLink(item.Title, "Detail", "Product", new { id = item.ID }, null)
+            </li>
+        }
+    </ul>
+</div>

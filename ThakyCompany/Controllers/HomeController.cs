@@ -8,9 +8,19 @@ namespace ThakyCompany.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        private const int ABOUTUS_ID = 1;
+        private const int AGENCY_ID = 2;
+
+        public ActionResult Index(int? id)
         {
-            return View();
+            int pageId = ABOUTUS_ID;
+            if (id != null)
+            {
+                pageId = AGENCY_ID;
+            }
+            ThakyCompany.Models.ThakyContext context = new Models.ThakyContext();
+            var page = context.Pages.Where(x => x.ID == pageId).Select(x => x).FirstOrDefault();
+            return View(page);
         }
 
         public ActionResult About()
