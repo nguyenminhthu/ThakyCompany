@@ -1,8 +1,18 @@
-﻿
+﻿@model ThakyCompany.Models.ProductDto
 @{
-    ViewBag.Title = "Detail";
+    ViewBag.Title = Model.Title;
     Layout = "~/thakycompany/Views/Shared/_Layout_Product.cshtml";
 }
 
-<h2>Detail</h2>
-
+<div class="panel panel-default contentMinHeight">
+    <div>
+        <h3 class="panel-heading panel-title boxtitle">
+            @Model.Title
+        </h3>
+    </div>
+    <div class="pagecontent ">
+        <p>
+            @Html.Raw(Model.Detail)
+        </p>
+    </div>
+</div>

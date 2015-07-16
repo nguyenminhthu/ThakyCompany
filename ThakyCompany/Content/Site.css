@@ -371,3 +371,7 @@ footer {
 .margin-bottom-10 {
     margin-bottom: 10px;
 }
+
+.contentMinHeight {
+    min-height: 500px;
+}

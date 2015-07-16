@@ -11,23 +11,30 @@ namespace ThakyCompany.Controllers
     {
         private ThakyCompany.Models.ThakyContext database = new Models.ThakyContext();
 
-        public ActionResult LoadProductList()
+        private List<ProductDto> GetProductList()
         {
             List<ProductDto> productList = new List<ProductDto>();
             if (Request.Cookies["language"] != null && Request.Cookies["language"].Value == "vi")
             {
-                foreach (var item in database.Products.Where(x => x.Actived == true).OrderByDescending(x => x.PostDate))
+                foreach (var item in database.Products.Where(x => x.Actived == true))
                 {
                     productList.Add(new ProductDto() { ID = item.ID, Title = item.ViTitle, Detail = item.ViDetail, Image = item.Image });
                 }
             }
             else
             {
-                foreach (var item in database.Products.Where(x => x.Actived == true).OrderByDescending(x => x.PostDate))
+                foreach (var item in database.Products.Where(x => x.Actived == true))
                 {
                     productList.Add(new ProductDto() { ID = item.ID, Title = item.EnTitle, Detail = item.EnDetail, Image = item.Image });
                 }
             }
+
+            return productList;
+        }
+
+        public ActionResult LoadProductList()
+        {
+            List<ProductDto> productList = GetProductList();
             return PartialView("_ProductMenu", productList);
         }
 
@@ -35,12 +42,23 @@ namespace ThakyCompany.Controllers
         // GET: /Product/
         public ActionResult Index()
         {
-            return View();
+            List<ProductDto> productList = GetProductList();
+            return View(productList);
         }
 
         public ActionResult Detail(int id)
         {
-            return View();
+            Product product = database.Products.Where(x => x.ID == id).Select(x => x).FirstOrDefault();
+            ProductDto detailProduct;
+            if (Request.Cookies["language"] != null && Request.Cookies["language"].Value == "vi")
+            {
+                detailProduct = new ProductDto() { ID = product.ID, Title = product.ViTitle, Detail = product.ViDetail, Image = product.Image };
+            }
+            else
+            {
+                detailProduct = new ProductDto() { ID = product.ID, Title = product.EnTitle, Detail = product.EnDetail, Image = product.Image };
+            }
+            return View(detailProduct);
         }
     }
 }

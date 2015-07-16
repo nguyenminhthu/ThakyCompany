@@ -1,7 +1,7 @@
 ﻿@model ThakyCompany.Models.Page
 @using ThakyCompany.Language;
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "ThakyCompany";
 }
 @{string title = "";
 string content = "";
@@ -16,7 +16,7 @@ else
     content = Model.EnDetail;
 }
 }
-<div class="panel panel-default">
+<div class="panel panel-default contentMinHeight">
     <div>
         <h3 class="panel-heading panel-title boxtitle">
             @title
@@ -24,7 +24,7 @@ else
     </div>
     <div class="pagecontent ">
         <p>
-            @content
+            @Html.Raw(content)
         </p>
     </div>
 </div>

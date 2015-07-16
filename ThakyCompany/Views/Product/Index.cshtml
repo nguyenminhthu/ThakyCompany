@@ -1,10 +1,11 @@
 ﻿@using ThakyCompany.Language;
+@model List<ThakyCompany.Models.ProductDto>
 @{
     ViewBag.Title = "Index";
     Layout = "~/thakycompany/Views/Shared/_Layout_Product.cshtml";
 }
 
-<div class="panel panel-default">
+<div class="panel panel-default contentMinHeight">
     <div>
         <h3 class="panel-heading panel-title boxtitle">
             @Resource.NewProducts
@@ -12,132 +13,19 @@
     </div>
     <div class="pagecontent ">
         <div class="row">
-            <div class="col-sm-4 col-md-4 margin-bottom-10">
-                <div class="thumbnail text-center">
-                    <a href="#">
-                        <img src="/Content/Images/Products/Product.jpg" alt="ProductName" />
-                    </a>
-                    <div class="caption text-center">
-                        <h4><a href="#">ProductName</a></h4>
+            @foreach (var item in Model)
+            {
+                <div class="col-sm-4 col-md-4 margin-bottom-10">
+                    <div class="thumbnail text-center">
+                        <a href="#" title="@item.Title">
+                            <img src="/Content/Images/Products/@item.Image" alt="@item.Title" />
+                        </a>
+                        <div class="caption text-center">
+                            <h5><strong>@Html.ActionLink(item.Title, "Detail", new { id = item.ID })</strong></h5>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-4 col-md-4 margin-bottom-10">
-                <div class="thumbnail text-center">
-                    <a href="#">
-                        <img src="/Content/Images/Products/Product.jpg" alt="Product" />
-                    </a>
-                    <div class="caption text-center">
-                        <h4><a href="#">ProductName</a></h4>
-                    </div>
-                </div>
-            </div>
-            <div class=" col-sm-4 col-md-4 margin-bottom-10">
-                <div class="thumbnail text-center">
-                    <a href="#">
-                        <img src="/Content/Images/Products/Product.jpg" alt="Product" />
-                    </a>
-                    <div class="caption text-center">
-                        <h4><a href="#">ProductName</a></h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4 col-md-4 margin-bottom-10">
-                <div class="thumbnail text-center">
-                    <a href="#">
-                        <img src="/Content/Images/Products/Product.jpg" alt="Product" />
-                    </a>
-                    <div class="caption text-center">
-                        <h4><a href="#">ProductName</a></h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 col-md-4 margin-bottom-10">
-                <div class="thumbnail text-center">
-                    <a href="#">
-                        <img src="/Content/Images/Products/Product.jpg" alt="Product" />
-                    </a>
-                    <div class="caption text-center">
-                        <h4><a href="#">ProductName</a></h4>
-                    </div>
-                </div>
-            </div>
-            <div class=" col-sm-4 col-md-4 margin-bottom-10">
-                <div class="thumbnail text-center">
-                    <a href="#">
-                        <img src="/Content/Images/Products/Product.jpg" alt="Product" />
-                    </a>
-                    <div class="caption text-center">
-                        <h4><a href="#">ProductName</a></h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4 col-md-4 margin-bottom-10">
-                <div class="thumbnail text-center">
-                    <a href="#">
-                        <img src="/Content/Images/Products/Product.jpg" alt="Product" />
-                    </a>
-                    <div class="caption text-center">
-                        <h4><a href="#">ProductName</a></h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 col-md-4 margin-bottom-10">
-                <div class="thumbnail text-center">
-                    <a href="#">
-                        <img src="/Content/Images/Products/Product.jpg" alt="Product" />
-                    </a>
-                    <div class="caption text-center">
-                        <h4><a href="#">ProductName</a></h4>
-                    </div>
-                </div>
-            </div>
-            <div class=" col-sm-4 col-md-4 margin-bottom-10">
-                <div class="thumbnail text-center">
-                    <a href="#">
-                        <img src="/Content/Images/Products/Product.jpg" alt="Product" />
-                    </a>
-                    <div class="caption text-center">
-                        <h4><a href="#">ProductName</a></h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4 col-md-4">
-                <div class="thumbnail text-center">
-                    <a href="#">
-                        <img src="/Content/Images/Products/Product.jpg" alt="Product" />
-                    </a>
-                    <div class="caption text-center">
-                        <h4><a href="#">ProductName</a></h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 col-md-4">
-                <div class="thumbnail text-center">
-                    <a href="#">
-                        <img src="/Content/Images/Products/Product.jpg" alt="Product" />
-                    </a>
-                    <div class="caption text-center">
-                        <h4><a href="#">ProductName</a></h4>
-                    </div>
-                </div>
-            </div>
-            <div class=" col-sm-4 col-md-4">
-                <div class="thumbnail text-center">
-                    <a href="#">
-                        <img src="/Content/Images/Products/Product.jpg" alt="Product" />
-                    </a>
-                    <div class="caption text-center">
-                        <h4><a href="#">ProductName</a></h4>
-                    </div>
-                </div>
-            </div>
+            }
         </div>
     </div>
 
