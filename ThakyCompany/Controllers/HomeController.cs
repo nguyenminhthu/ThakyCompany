@@ -20,6 +20,7 @@ namespace ThakyCompany.Controllers
             }
             ThakyCompany.Models.ThakyContext context = new Models.ThakyContext();
             var page = context.Pages.Where(x => x.ID == pageId).Select(x => x).FirstOrDefault();
+            ViewBag.Title = "Cơ sở trà Thần Kỳ";
             return View(page);
         }
 

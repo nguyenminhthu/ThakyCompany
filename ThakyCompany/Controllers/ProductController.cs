@@ -18,14 +18,14 @@ namespace ThakyCompany.Controllers
             {
                 foreach (var item in database.Products.Where(x => x.Actived == true))
                 {
-                    productList.Add(new ProductDto() { ID = item.ID, Title = item.ViTitle, Detail = item.ViDetail, Image = item.Image });
+                    productList.Add(new ProductDto() { ID = item.ID, Title = item.ViTitle, Detail = item.ViDetail, Image = item.Image, Price = item.Price });
                 }
             }
             else
             {
                 foreach (var item in database.Products.Where(x => x.Actived == true))
                 {
-                    productList.Add(new ProductDto() { ID = item.ID, Title = item.EnTitle, Detail = item.EnDetail, Image = item.Image });
+                    productList.Add(new ProductDto() { ID = item.ID, Title = item.EnTitle, Detail = item.EnDetail, Image = item.Image, Price = item.Price });
                 }
             }
 
@@ -52,11 +52,11 @@ namespace ThakyCompany.Controllers
             ProductDto detailProduct;
             if (Request.Cookies["language"] != null && Request.Cookies["language"].Value == "vi")
             {
-                detailProduct = new ProductDto() { ID = product.ID, Title = product.ViTitle, Detail = product.ViDetail, Image = product.Image };
+                detailProduct = new ProductDto() { ID = product.ID, Title = product.ViTitle, Detail = product.ViDetail, Image = product.Image, Price = product.Price };
             }
             else
             {
-                detailProduct = new ProductDto() { ID = product.ID, Title = product.EnTitle, Detail = product.EnDetail, Image = product.Image };
+                detailProduct = new ProductDto() { ID = product.ID, Title = product.EnTitle, Detail = product.EnDetail, Image = product.Image, Price = product.Price };
             }
             return View(detailProduct);
         }

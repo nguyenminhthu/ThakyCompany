@@ -1,7 +1,7 @@
 ﻿body {
     padding-bottom: 20px;
     background-color: #ccfacc;
-    /*background-color: #e2ffe0;*/
+    background-image: url("/Content/Images/Pagebackground.jpg");
 }
 
 .container {
@@ -368,10 +368,18 @@ footer {
             color: red;
         }
 
+    footer h3 {
+        margin-top: 10px;
+    }
+
 .margin-bottom-10 {
     margin-bottom: 10px;
 }
 
 .contentMinHeight {
     min-height: 500px;
+}
+
+.price {
+    color: #fa3d00;
 }

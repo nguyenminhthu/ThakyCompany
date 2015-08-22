@@ -1,7 +1,8 @@
 ﻿@model ThakyCompany.Models.ProductDto
+@using ThakyCompany.Language
 @{
     ViewBag.Title = Model.Title;
-    Layout = "~/thakycompany/Views/Shared/_Layout_Product.cshtml";
+    Layout = "/Views/Shared/_Layout_Product.cshtml";
 }
 
 <div class="panel panel-default contentMinHeight">
@@ -14,5 +15,7 @@
         <p>
             @Html.Raw(Model.Detail)
         </p>
+        <h5><strong>@Resource.Price : <span class="price"> @Model.Price </span></strong></h5>
+        <div class="fb-share-button" data-href="@Url.Action("Detail", "Product", new { id = Model.ID }, this.Request.Url.Scheme) " data-layout="button"></div>
     </div>
 </div>

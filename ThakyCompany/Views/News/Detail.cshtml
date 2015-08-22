@@ -17,6 +17,7 @@
 
 @{
     ViewBag.Title = Model.Title;
+    Layout = "/Views/Shared/_TopLayout.cshtml";
 }
 
 <div class="panel panel-default contentMinHeight">
@@ -26,8 +27,7 @@
         </h3>
     </div>
     <div class="pagecontent ">
-        <p>
-            @Model.Detail
-        </p>
+
+        @Html.Raw(Model.Detail)
     </div>
 </div>

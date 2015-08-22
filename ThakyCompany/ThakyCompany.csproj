@@ -39,6 +39,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CKFinder, Version=2.5.0.2791, Culture=neutral, PublicKeyToken=579e7adc719a1423, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\CKFinder.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -164,10 +168,15 @@
     <Compile Include="Controllers\ChangeLanguageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\NewsManageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ProductManageController.cs" />
+    <Compile Include="Controllers\QuanLyController.cs" />
+    <Compile Include="Controllers\VisitorOnlineController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper\VisitorHelper.cs" />
     <Compile Include="Language\Resource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -178,13 +187,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.vi.resx</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504180331551_InitialCreate.cs" />
+    <Compile Include="Migrations\201504180331551_InitialCreate.Designer.cs">
+      <DependentUpon>201504180331551_InitialCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201504230952473_AddTableProductNewsPage.cs" />
     <Compile Include="Migrations\201504230952473_AddTableProductNewsPage.Designer.cs">
       <DependentUpon>201504230952473_AddTableProductNewsPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201507210320338_UpdateAccount.cs" />
+    <Compile Include="Migrations\201507210320338_UpdateAccount.Designer.cs">
+      <DependentUpon>201507210320338_UpdateAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507270330310_AddPriceColumn.cs" />
+    <Compile Include="Migrations\201507270330310_AddPriceColumn.Designer.cs">
+      <DependentUpon>201507270330310_AddPriceColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507280338368_AddVisitorOnline.cs" />
+    <Compile Include="Migrations\201507280338368_AddVisitorOnline.Designer.cs">
+      <DependentUpon>201507280338368_AddVisitorOnline.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\VisitorOnline.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\News.cs" />
     <Compile Include="Models\NewsDto.cs" />
@@ -198,28 +224,38 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\Images\banner.png" />
     <Content Include="Content\Images\bg-white.gif" />
     <Content Include="Content\Images\Carousel\main-slide-1.jpg" />
     <Content Include="Content\Images\Carousel\main-slide-2.jpg" />
     <Content Include="Content\Images\Carousel\main-slide-3.jpg" />
     <Content Include="Content\Images\Carousel\main-slide-4.jpg" />
+    <Content Include="Content\Images\group.png" />
     <Content Include="Content\Images\LeafIcon.png" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\logo1.png" />
     <Content Include="Content\Images\Products\Product.jpg" />
     <Content Include="Content\Images\Products\Product1.jpg" />
     <Content Include="Content\Images\Products\Product2.jpg" />
+    <Content Include="Content\Images\status_online.png" />
     <Content Include="Content\Images\TextMira.png" />
     <Content Include="Content\Images\TextMoringa.png" />
     <Content Include="Content\Images\United-states-flag.png" />
+    <Content Include="Content\Images\user.png" />
     <Content Include="Content\Images\Vietnam-flag.png" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -242,7 +278,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_TopLayout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -263,9 +299,21 @@
     <Content Include="Views\Shared\_NewsMenu.cshtml" />
     <Content Include="Views\News\Detail.cshtml" />
     <Content Include="Views\Shared\_ProductMenu.cshtml" />
+    <Content Include="Views\NewsManage\Create.cshtml" />
+    <Content Include="Views\NewsManage\Edit.cshtml" />
+    <Content Include="Views\NewsManage\Index.cshtml" />
+    <Content Include="Views\ProductManage\Index.cshtml" />
+    <Content Include="Views\ProductManage\Create.cshtml" />
+    <Content Include="Views\ProductManage\Edit.cshtml" />
+    <Content Include="Views\Shared\_VisitorOnline.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_ManageLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
+    <Folder Include="Views\QuanLy\" />
+    <Folder Include="Views\VisitorOnline\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -283,8 +331,20 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.vi.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504180331551_InitialCreate.resx">
+      <DependentUpon>201504180331551_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504230952473_AddTableProductNewsPage.resx">
       <DependentUpon>201504230952473_AddTableProductNewsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507210320338_UpdateAccount.resx">
+      <DependentUpon>201507210320338_UpdateAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507270330310_AddPriceColumn.resx">
+      <DependentUpon>201507270330310_AddPriceColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507280338368_AddVisitorOnline.resx">
+      <DependentUpon>201507280338368_AddVisitorOnline.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

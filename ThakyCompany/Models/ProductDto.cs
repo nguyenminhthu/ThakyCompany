@@ -14,5 +14,7 @@ namespace ThakyCompany.Models
         public string Title { get; set; }
 
         public string Detail { get; set; }
+
+        public string Price { get; set; }
     }
 }

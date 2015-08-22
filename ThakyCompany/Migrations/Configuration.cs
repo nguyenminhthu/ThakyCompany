@@ -5,14 +5,15 @@ namespace ThakyCompany.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<ThakyCompany.Models.ThakyContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<ThakyCompany.Models.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "ThakyCompany.Models.ApplicationDbContext";
         }
 
-        protected override void Seed(ThakyCompany.Models.ThakyContext context)
+        protected override void Seed(ThakyCompany.Models.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

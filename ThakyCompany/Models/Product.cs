@@ -12,5 +12,7 @@ namespace ThakyCompany.Models
         public DateTime PostDate { get; set; }
 
         public bool Actived { get; set; }
+
+        public string Price { get; set; }
     }
 }

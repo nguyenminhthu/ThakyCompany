@@ -127,7 +127,7 @@
     <value>Agency</value>
   </data>
   <data name="CompanyName" xml:space="preserve">
-    <value>ThaKyCompany</value>
+    <value>THAKYCOMPANY</value>
   </data>
   <data name="Contact" xml:space="preserve">
     <value>Contact</value>
@@ -138,19 +138,43 @@
   <data name="Home" xml:space="preserve">
     <value>Home</value>
   </data>
+  <data name="LastMonth" xml:space="preserve">
+    <value>Last Month</value>
+  </data>
+  <data name="LastWeek" xml:space="preserve">
+    <value>Last week</value>
+  </data>
   <data name="NewProducts" xml:space="preserve">
     <value>New Products</value>
   </data>
   <data name="News" xml:space="preserve">
     <value>News</value>
   </data>
+  <data name="Online" xml:space="preserve">
+    <value>Online</value>
+  </data>
   <data name="Phone" xml:space="preserve">
-    <value>Phone : 093 78 58 788</value>
+    <value>Phone : (+84) 93 78 58 788</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Price</value>
   </data>
   <data name="Product" xml:space="preserve">
     <value>Product</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Search</value>
+  </data>
+  <data name="Today" xml:space="preserve">
+    <value>Today</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="VisitorOnline" xml:space="preserve">
+    <value>Visitor Counter</value>
+  </data>
+  <data name="Yesterday" xml:space="preserve">
+    <value>Yesterday</value>
   </data>
 </root>

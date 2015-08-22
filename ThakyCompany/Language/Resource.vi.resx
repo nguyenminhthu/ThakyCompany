@@ -127,7 +127,7 @@
     <value>Đại lý</value>
   </data>
   <data name="CompanyName" xml:space="preserve">
-    <value>Cơ sở trà Thần Kỳ</value>
+    <value>CƠ SỞ TRÀ THẦN KỲ</value>
   </data>
   <data name="Contact" xml:space="preserve">
     <value>Liên hệ</value>
@@ -138,19 +138,43 @@
   <data name="Home" xml:space="preserve">
     <value>Trang chủ</value>
   </data>
+  <data name="LastMonth" xml:space="preserve">
+    <value>Trong tháng</value>
+  </data>
+  <data name="LastWeek" xml:space="preserve">
+    <value>Tuần qua</value>
+  </data>
   <data name="NewProducts" xml:space="preserve">
     <value>Sản phẩm mới</value>
   </data>
   <data name="News" xml:space="preserve">
     <value>Tin tức</value>
   </data>
+  <data name="Online" xml:space="preserve">
+    <value>Đang online</value>
+  </data>
   <data name="Phone" xml:space="preserve">
-    <value>Điện thoại : 093 78 58 788</value>
+    <value>Điện thoại : (+84) 93 78 58 788</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Giá</value>
   </data>
   <data name="Product" xml:space="preserve">
     <value>Sản phẩm</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Tìm kiếm</value>
+  </data>
+  <data name="Today" xml:space="preserve">
+    <value>Hôm nay</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Tổng cộng</value>
+  </data>
+  <data name="VisitorOnline" xml:space="preserve">
+    <value>Lượt truy cập</value>
+  </data>
+  <data name="Yesterday" xml:space="preserve">
+    <value>Hôm qua</value>
   </data>
 </root>

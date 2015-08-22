@@ -7,10 +7,10 @@
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <script src="~/ckeditor/ckeditor.js"></script>
 </head>
 <body>
     <div class="container">
-
         <header class="row">
             <div class="col-md-12">
                 <div class="headerbackground">
@@ -18,8 +18,8 @@
                         <div class="col-md-3" style="padding-left:30px;">
                             <a href="/"><img class="img-responsive" alt="Thakycompany.com" src="/Content/Images/logo.png" /></a>
                         </div>
-                        <div class="col-md-6">
-                            <div style="padding-top: 58px; padding-left: 130px;"><img src="/Content/Images/TextMira.png" /> </div>
+                        <div class="col-md-6 col-md-of">
+                            <div class="hidden-sm hidden-xs" style="padding-top: 45px; "><img src="/Content/Images/banner_Text.png" /> </div>
                         </div>
                         <div class="col-md-3 text-right">
                             <div class="row">
@@ -45,13 +45,13 @@
                                 </div>*@
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div style="padding-left: 260px;">
-                                <img src="/Content/Images/TextMoringa.png" />
+                    @*<div class="row">
+                            <div class="col-md-12">
+                                <div style="padding-left: 260px;">
+                                    <img src="/Content/Images/TextMoringa.png" />
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                        </div>*@
                 </div>
             </div>
         </header>
@@ -85,26 +85,22 @@
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                     <li data-target="#myCarousel" data-slide-to="1"></li>
                     <li data-target="#myCarousel" data-slide-to="2"></li>
-                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                    @*<li data-target="#myCarousel" data-slide-to="3"></li>*@
                 </ol>
 
                 <!-- Wrapper for slides -->
 
                 <div class="carousel-inner roundcorner" role="listbox">
                     <div class="item active">
-                        <img src="/Content/Images/Carousel/main-slide-1.jpg" alt="Chania" width="460" height="345">
+                        <img src="/Content/Images/Carousel/slice1.jpg" alt="thakycompany.com" width="960" height="260">
                     </div>
 
                     <div class="item">
-                        <img src="/Content/Images/Carousel/main-slide-2.jpg" alt="Chania" width="460" height="345">
+                        <img src="/Content/Images/Carousel/slice2.jpg" alt="thakycompany.com" width="960" height="260">
                     </div>
 
                     <div class="item">
-                        <img src="/Content/Images/Carousel/main-slide-3.jpg" alt="Flower" width="460" height="345">
-                    </div>
-
-                    <div class="item">
-                        <img src="/Content/Images/Carousel/main-slide-4.jpg" alt="Flower" width="460" height="345">
+                        <img src="/Content/Images/Carousel/slice3.jpg" alt="thakycompany.com" width="960" height="260">
                     </div>
                 </div>
                 <!-- Left and right controls -->
@@ -119,21 +115,16 @@
             </div>
         </div>
         <div class="boxbackground">
-            <div class="row">
-                <div class="col-md-3">
-                    @Html.Action("LoadNews", "News")
-                </div>
-                <div class="col-md-9 padding-left-0">@RenderBody()</div>
-            </div>
+            @RenderBody()
             <div class="row">
                 <div class="col-md-12">
                     <footer class="roundborder padding-left-0 text-center">
-                        @Resource.CompanyName<br />
-                        @Resource.AddressValue<br />
-                        @Resource.Phone<br />
-                        Email:<a href="mailto:@Resource.Email"> @Resource.Email</a>
+                        <h3><strong>@Resource.CompanyName</strong></h3>
+                        <i class="fa fa-home fa-2x"></i> @Resource.AddressValue<br />
+                        <i class="fa fa-phone fa-2x"></i> @Resource.Phone<br />
+                        <i class="fa fa-envelope-o fa-2x"></i> Email:<a href="mailto:@Resource.Email"> @Resource.Email</a>
                         <br />
-                        Website: <a href="http://thakycompany.com" target="_blank">http://thakycompany.com</a>
+                        <i class="fa fa-home fa-2x"></i> Website: <a href="http://thakycompany.com" target="_blank">http://thakycompany.com</a>, <a href="http://moringavina.com/" target="_blank">http://moringavina.com/</a>
                     </footer>
                 </div>
             </div>
