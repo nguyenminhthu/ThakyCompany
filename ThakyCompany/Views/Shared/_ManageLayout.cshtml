@@ -1,0 +1,28 @@
+﻿@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-heading boxtitle">
+                <h3 class="panel-title">Quản lý</h3>
+            </div>
+            <!-- List group -->
+            <ul class="list-group">
+                <li class="list-group-item">
+                    @Html.ActionLink("Quản lý sản phẩm", "Index", "ProductManage")
+                </li>
+                <li class="list-group-item">
+                    @Html.ActionLink("Quản lý tin", "Index", "NewsManage")
+                </li>
+                <li class="list-group-item">
+                    @Html.ActionLink("Quản lý trang", "Index", "PagesManage")
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-9 padding-left-0">
+        @Html.Partial("_LoginPartial")
+        @RenderBody()
+    </div>
+</div>

@@ -1,0 +1,38 @@
+﻿@using ThakyCompany.Language
+@model ThakyCompany.Models.VisitorOnlineDto
+<div class="panel panel-default">
+    <div class="panel-heading boxtitle">
+        <h3 class="panel-title">@Resource.VisitorOnline</h3>
+    </div>
+    @*<div class="text-center" style="background-color:black; color:white; font-weight:bold; padding:5px; font-size:16px;">
+            @Html.FormatValue(Model.Total, "{0:0000000}")
+        </div>*@
+    <div style="padding:5px;">
+        <table width="100%">
+            <tr>
+                <td><img width="20" src="/Content/Images/status_online.png" />@Resource.Online </td>
+                <td class="text-right">@Html.FormatValue(Model.Online, "{0:#,##0}")</td>
+            </tr>
+            <tr>
+                <td><img width="20" src="/Content/Images/group.png" /> @Resource.Today</td>
+                <td class="text-right">@Html.FormatValue(Model.Today, "{0:#,##0}")</td>
+            </tr>
+            <tr>
+                <td><img width="20" src="/Content/Images/group.png" /> @Resource.Yesterday</td>
+                <td class="text-right">@Html.FormatValue(Model.Yesterday, "{0:#,##0}")</td>
+            </tr>
+            <tr>
+                <td><img width="20" src="/Content/Images/group.png" /> @Resource.LastWeek</td>
+                <td class="text-right">@Html.FormatValue(Model.LastWeek, "{0:#,##0}")</td>
+            </tr>
+            <tr>
+                <td><img width="20" src="/Content/Images/group.png" /> @Resource.LastMonth</td>
+                <td class="text-right">@Html.FormatValue(Model.LastMonth, "{0:#,##0}")</td>
+            </tr>
+            <tr>
+                <td><img width="20" src="/Content/Images/group.png" /> @Resource.Total</td>
+                <td class="text-right">@Html.FormatValue(Model.Total, "{0:#,##0}")</td>
+            </tr>
+        </table>
+    </div>
+</div>
