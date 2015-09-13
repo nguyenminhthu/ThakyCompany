@@ -13,7 +13,6 @@ namespace ThakyCompany.Controllers
         public ActionResult ShowVisitorOnline()
         {
             ThakyCompany.Models.VisitorOnlineDto visitorOnline = new Models.VisitorOnlineDto();
-            var application = this.HttpContext.Application;
 
             DateTime yesterday = DateTime.Now.AddDays(-1).Date;
             DateTime startDateOfWeek = DateTime.Now.AddDays(-7).Date;
