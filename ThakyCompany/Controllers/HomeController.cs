@@ -35,7 +35,7 @@ namespace ThakyCompany.Controllers
             todayOnline = context.VisitorOnline.Where(x => x.Date == nowDate);
             if (todayOnline == null || todayOnline.Count() == 0)
             {
-                context.VisitorOnline.Add(new VisitorOnline() { Date = DateTime.Now.Date, Online = int.Parse(System.Web.HttpContext.Current.Application["Today"].ToString()) });
+                context.VisitorOnline.Add(new VisitorOnline() { Date = DateTime.Now.Date, Online = 1 });
                 context.SaveChanges();
                 System.Web.HttpContext.Current.Application["Today"] = 1;
                 System.Web.HttpContext.Current.Application["Online"] = 1;
