@@ -65,12 +65,27 @@
                 <input type="file" id="newsImage" name="newsImage" onchange="loadFile(event)" />
                 <h4 class="text-danger">(Kích thước hình phù hợp : 194px × 242px)</h4>
                 <img id="output" />
-                <script>
+                <script type="text/javascript">
                     var loadFile = function (event) {
                         var reader = new FileReader();
-                        reader.onload = function () {
+                        reader.onload = function (e) {
                             var output = document.getElementById('output');
                             output.src = reader.result;
+
+                            var image = new Image();
+                            //Set the Base64 string return from FileReader as source.
+                            image.src = e.target.result;
+                            image.onload = function () {
+                                //Determine the Height and Width.
+                                var height = this.height;
+                                var width = this.width;
+                                if (height != 242 || width != 194) {
+                                    alert("Kích thước hình không đúng. Vui lòng nhập hình đúng kích thước 194px x 242px;");
+                                    return false;
+                                }
+                                return true;
+                            };
+
                         };
                         reader.readAsDataURL(event.target.files[0]);
                     };
@@ -98,11 +113,21 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Lưu" class="btn btn-default" />
+                <input type="submit" value="Lưu" class="btn btn-default" id="save" />
             </div>
         </div>
     </div>
-    <script>
+    <script type="text/javascript">
+        $(function () {
+            $("#save").bind("click", function () {
+                var output = document.getElementById('output');
+                if (output.height != 242 || output.width != 194) {
+                    alert("Kích thước hình không đúng. Vui lòng nhập hình đúng kích thước 194px x 242px;");
+                    return false;
+                }
+                return true;
+            });
+        });
 
         function Config(id) {
             CKEDITOR.replace(id, {
