@@ -218,7 +218,6 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BaseModel.cs" />
-    <Compile Include="Models\Country.cs" />
     <Compile Include="Models\ProductCategory.cs" />
     <Compile Include="Models\VisitorOnline.cs" />
     <Compile Include="Models\IdentityModels.cs" />
