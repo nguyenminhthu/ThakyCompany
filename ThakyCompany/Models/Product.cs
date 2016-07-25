@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -14,5 +15,8 @@ namespace ThakyCompany.Models
         public bool Actived { get; set; }
 
         public string Price { get; set; }
+
+        [ForeignKey("ID")]
+        public virtual ProductCategory Category { get; set; }
     }
 }

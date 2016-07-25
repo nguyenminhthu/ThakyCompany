@@ -191,25 +191,35 @@
     <Compile Include="Migrations\201504180331551_InitialCreate.Designer.cs">
       <DependentUpon>201504180331551_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201504230952473_AddTableProductNewsPage.cs" />
+    <Compile Include="Migrations\201504230952473_AddTableProductNewsPage.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Migrations\201504230952473_AddTableProductNewsPage.Designer.cs">
       <DependentUpon>201504230952473_AddTableProductNewsPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201507210320338_UpdateAccount.cs" />
+    <Compile Include="Migrations\201507210320338_UpdateAccount.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Migrations\201507210320338_UpdateAccount.Designer.cs">
       <DependentUpon>201507210320338_UpdateAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201507270330310_AddPriceColumn.cs" />
+    <Compile Include="Migrations\201507270330310_AddPriceColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Migrations\201507270330310_AddPriceColumn.Designer.cs">
       <DependentUpon>201507270330310_AddPriceColumn.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201507280338368_AddVisitorOnline.cs" />
+    <Compile Include="Migrations\201507280338368_AddVisitorOnline.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Migrations\201507280338368_AddVisitorOnline.Designer.cs">
       <DependentUpon>201507280338368_AddVisitorOnline.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\ProductCategory.cs" />
     <Compile Include="Models\VisitorOnline.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\News.cs" />
@@ -310,6 +320,7 @@
     <Content Include="Views\Shared\_ManageLayout.cshtml" />
     <Content Include="Views\PagesManage\Edit.cshtml" />
     <Content Include="Views\PagesManage\Index.cshtml" />
+    <Content Include="Views\Shared\_HotLine.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

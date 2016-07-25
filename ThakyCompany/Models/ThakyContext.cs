@@ -20,5 +20,7 @@ namespace ThakyCompany.Models
         public DbSet<Product> Products { get; set; }
 
         public DbSet<VisitorOnline> VisitorOnline { get; set; }
+        //public DbSet<ProductCategory> ProductCategory { get; set; }
+        public DbSet<Country> Country { get; set; }
     }
 }

@@ -70,9 +70,48 @@
                         <li><a href="/">@Resource.Home</a></li>
                         @*<li>@Html.ActionLink(Resource.Home, "Index", "Home")</li>*@
                         @*<li>@Html.ActionLink("About", "About", "Home")</li>*@
-                        <li>@Html.ActionLink(Resource.Product, "Index", "Product")</li>
+                        @*<li>@Html.ActionLink(Resource.Product, "Index", "Product", new {@class = "dropdown-toggle" , data-toggle = "dropdown"})</li>*@
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                @Resource.Product
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"><strong>Trà Chùm Ngây</strong></a></li>
+                            <li><a href="#"><strong>Bột Ngũ Cốc</strong></a></li>
+                            <li><a href="#"><strong>Nông Sản Sấy</strong></a></li>
+                            <li><a href="#"><strong>Thảo Dược Quý</strong></a></li>
+                            <li><a href="#"><strong>Làm Đẹp</strong></a></li>
+                        </ul>
+                    </li>
                         <li>@Html.ActionLink(Resource.Agency, "Index", "Home", new { id = 2 }, null)</li>
-                        <li>@Html.ActionLink(Resource.Contact, "Contact", "Home")</li>
+                        @*<li>@Html.ActionLink(Resource.Contact, "Contact", "Home")</li>*@
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                Quy Trình
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#"><strong>Nông Trại</strong></a></li>
+                                <li><a href="#"><strong>Nhà Máy</strong></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Thảo Dược
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Khuyến Mãi
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Du Lịch
+                            </a>
+                        </li>
+                        <li>@Html.ActionLink(Resource.Contact, "Index", "Home", new { id = 3 }, null)</li>
                     </ul>
                     @*@Html.Partial("_LoginPartial")*@
                 </div>

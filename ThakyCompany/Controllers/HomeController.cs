@@ -17,10 +17,10 @@ namespace ThakyCompany.Controllers
         {
             UpdateOnlineNumber();
 
-            int pageId = ABOUTUS_ID;
+            int? pageId = ABOUTUS_ID;
             if (id != null)
             {
-                pageId = AGENCY_ID;
+                pageId = id;
             }
 
             var page = context.Pages.Where(x => x.ID == pageId).Select(x => x).FirstOrDefault();
