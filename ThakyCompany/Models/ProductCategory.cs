@@ -15,7 +15,7 @@ namespace ThakyCompany.Models
 
         [Display(Name = "Tiêu đề")]
         public string ViTitle { get; set; }
-        
+
         public virtual ICollection<Product> Products { get; set; }
     }
 }

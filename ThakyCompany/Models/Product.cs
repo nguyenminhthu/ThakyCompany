@@ -16,7 +16,6 @@ namespace ThakyCompany.Models
 
         public string Price { get; set; }
 
-        [ForeignKey("ID")]
         public virtual ProductCategory Category { get; set; }
     }
 }

@@ -11,6 +11,7 @@ namespace ThakyCompany.Models
         public ThakyContext()
             : base("DefaultConnection")
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ThakyContext, ThakyCompany.Migrations.Configuration>("DefaultConnection"));
         }
 
         public DbSet<Page> Pages { get; set; }
@@ -21,5 +22,10 @@ namespace ThakyCompany.Models
 
         public DbSet<VisitorOnline> VisitorOnline { get; set; }
         public DbSet<ProductCategory> ProductCategory { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
