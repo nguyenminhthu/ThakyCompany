@@ -11,12 +11,16 @@ namespace ThakyCompany.Controllers
     {
         private ThakyCompany.Models.ThakyContext database = new Models.ThakyContext();
 
-        private List<ProductDto> GetProductList()
+        private List<ProductDto> GetProductList(int? productCategoryID)
         {
+            if (productCategoryID == null) 
+            {
+                productCategoryID = 1; 
+            }
             List<ProductDto> productList = new List<ProductDto>();
             if (Request.Cookies["language"] != null && Request.Cookies["language"].Value == "vi")
             {
-                foreach (var item in database.Products.Where(x => x.Actived == true))
+                foreach (var item in database.Products.Where(x => x.Actived == true && x.Category.ID == productCategoryID))
                 {
                     productList.Add(new ProductDto() { ID = item.ID, Title = item.ViTitle, Detail = item.ViDetail, Image = item.Image, Price = item.Price });
                 }
@@ -34,15 +38,25 @@ namespace ThakyCompany.Controllers
 
         public ActionResult LoadProductList()
         {
-            List<ProductDto> productList = GetProductList();
+            int? productCategoryID;
+            if(Session["productCategoryID"] == null)
+            {
+                productCategoryID = 1;
+            }
+            else
+            {
+                productCategoryID = int.Parse(Session["productCategoryID"].ToString());
+            }
+            List<ProductDto> productList = GetProductList(productCategoryID);
             return PartialView("_ProductMenu", productList);
         }
 
         //
         // GET: /Product/
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
-            List<ProductDto> productList = GetProductList();
+            Session["productCategoryID"] = id;
+            List<ProductDto> productList = GetProductList(id);
             return View(productList);
         }
 
