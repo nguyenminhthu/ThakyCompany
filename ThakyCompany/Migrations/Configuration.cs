@@ -28,11 +28,11 @@
             //    );
             //
 
-            context.ProductCategory.AddOrUpdate(new Models.ProductCategory() { EnTitle = "Trà Chùm Ngây", ViTitle = "Trà Chùm Ngây" });
-            context.ProductCategory.AddOrUpdate(new Models.ProductCategory() { EnTitle = "Bột Ngũ Cốc", ViTitle = "Bột Ngũ Cốc" });
-            context.ProductCategory.AddOrUpdate(new Models.ProductCategory() { EnTitle = "Nông Sản Sấy", ViTitle = "Nông Sản Sấy" });
-            context.ProductCategory.AddOrUpdate(new Models.ProductCategory() { EnTitle = "Thảo Dược Quý", ViTitle = "Thảo Dược Quý" });
-            context.ProductCategory.AddOrUpdate(new Models.ProductCategory() { EnTitle = "Làm Đẹp", ViTitle = "Làm Đẹp" });
+            //context.ProductCategory.AddOrUpdate(new Models.ProductCategory() { EnTitle = "Trà Chùm Ngây", ViTitle = "Trà Chùm Ngây" });
+            //context.ProductCategory.AddOrUpdate(new Models.ProductCategory() { EnTitle = "Bột Ngũ Cốc", ViTitle = "Bột Ngũ Cốc" });
+            //context.ProductCategory.AddOrUpdate(new Models.ProductCategory() { EnTitle = "Nông Sản Sấy", ViTitle = "Nông Sản Sấy" });
+            //context.ProductCategory.AddOrUpdate(new Models.ProductCategory() { EnTitle = "Thảo Dược Quý", ViTitle = "Thảo Dược Quý" });
+            //context.ProductCategory.AddOrUpdate(new Models.ProductCategory() { EnTitle = "Làm Đẹp", ViTitle = "Làm Đẹp" });
         }
     }
 }

@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using ThakyCompany.Models;
 
@@ -13,23 +11,42 @@ namespace ThakyCompany.Controllers
 
         private List<ProductDto> GetProductList(int? productCategoryID)
         {
-            if (productCategoryID == null) 
+            if (productCategoryID == null)
             {
-                productCategoryID = 1; 
+                productCategoryID = 1;
             }
             List<ProductDto> productList = new List<ProductDto>();
+            var category = database.ProductCategory.Where(x => x.ID == productCategoryID).FirstOrDefault();
             if (Request.Cookies["language"] != null && Request.Cookies["language"].Value == "vi")
             {
                 foreach (var item in database.Products.Where(x => x.Actived == true && x.Category.ID == productCategoryID))
                 {
-                    productList.Add(new ProductDto() { ID = item.ID, Title = item.ViTitle, Detail = item.ViDetail, Image = item.Image, Price = item.Price });
+                    
+                    ProductDto newProduct = new ProductDto()
+                    {
+                        ID = item.ID,
+                        Title = item.ViTitle,
+                        Detail = item.ViDetail,
+                        Image = item.Image,
+                        Price = item.Price,
+                        Category = new ProductCategoryDto() { ID = category.ID, Title = category.ViTitle }
+                    };
+                    productList.Add(newProduct);
                 }
             }
             else
             {
                 foreach (var item in database.Products.Where(x => x.Actived == true))
                 {
-                    productList.Add(new ProductDto() { ID = item.ID, Title = item.EnTitle, Detail = item.EnDetail, Image = item.Image, Price = item.Price });
+                    productList.Add(new ProductDto()
+                    {
+                        ID = item.ID,
+                        Title = item.EnTitle,
+                        Detail = item.EnDetail,
+                        Image = item.Image,
+                        Price = item.Price,
+                        Category = new ProductCategoryDto() { ID = category.ID, Title = category.EnTitle }
+                    });
                 }
             }
 
@@ -39,7 +56,7 @@ namespace ThakyCompany.Controllers
         public ActionResult LoadProductList()
         {
             int? productCategoryID;
-            if(Session["productCategoryID"] == null)
+            if (Session["productCategoryID"] == null)
             {
                 productCategoryID = 1;
             }

@@ -23,6 +23,9 @@ namespace ThakyCompany.Models
         public DbSet<VisitorOnline> VisitorOnline { get; set; }
         public DbSet<ProductCategory> ProductCategory { get; set; }
 
+        public DbSet<Procedure> Procedure { get; set; }
+        public DbSet<ProcedureCategory> ProcedureCategory { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

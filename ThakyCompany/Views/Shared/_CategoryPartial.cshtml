@@ -1,0 +1,15 @@
+﻿@model List<ThakyCompany.Models.ProductCategoryDto>
+
+<ul class="dropdown-menu">
+    @foreach(var item in Model)
+    {
+        <li>
+            @Html.ActionLink(item.Title, "Index", "Product", new { id = item.ID }, new { style = "font-weight:bold;" })
+        </li>    
+    }
+    
+        @*<li><a href="#"><strong>Bột Ngũ Cốc</strong></a></li>
+        <li><a href="#"><strong>Nông Sản Sấy</strong></a></li>
+        <li><a href="#"><strong>Thảo Dược Quý</strong></a></li>
+        <li><a href="#"><strong>Làm Đẹp</strong></a></li>*@
+</ul>

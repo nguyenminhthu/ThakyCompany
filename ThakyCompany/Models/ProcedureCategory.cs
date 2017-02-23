@@ -6,7 +6,7 @@ using System.Web;
 
 namespace ThakyCompany.Models
 {
-    public class ProductCategory
+    public class ProcedureCategory
     {
         public int ID { get; set; }
 
@@ -16,6 +16,6 @@ namespace ThakyCompany.Models
         [Display(Name = "Tiêu đề")]
         public string ViTitle { get; set; }
         public bool Actived { get; set; }
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<Procedure> Products { get; set; }
     }
 }

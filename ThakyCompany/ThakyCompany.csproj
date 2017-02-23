@@ -170,6 +170,7 @@
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\PagesManageController.cs" />
     <Compile Include="Controllers\NewsManageController.cs" />
+    <Compile Include="Controllers\ProductCategoryController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProductManageController.cs" />
     <Compile Include="Controllers\QuanLyController.cs" />
@@ -194,7 +195,10 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\ProcedureCategory.cs" />
+    <Compile Include="Models\Procedure.cs" />
     <Compile Include="Models\ProductCategory.cs" />
+    <Compile Include="Models\ProductCategoryDto.cs" />
     <Compile Include="Models\VisitorOnline.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\News.cs" />
@@ -296,10 +300,12 @@
     <Content Include="Views\PagesManage\Edit.cshtml" />
     <Content Include="Views\PagesManage\Index.cshtml" />
     <Content Include="Views\Shared\_HotLine.cshtml" />
+    <Content Include="Views\Shared\_CategoryPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\" />
+    <Folder Include="Views\ProductCategory\" />
     <Folder Include="Views\QuanLy\" />
     <Folder Include="Views\VisitorOnline\" />
   </ItemGroup>
