@@ -121,7 +121,7 @@
     <value>About Us</value>
   </data>
   <data name="AddressValue" xml:space="preserve">
-    <value>Address: 11/26 Ly Tu Trong Str, Tay Son, PleiKu, Gia Lai</value>
+    <value>Address: Nhân Tâm, Xuyên Mộc, Bà Rịa - Vũng Tàu</value>
   </data>
   <data name="Agency" xml:space="preserve">
     <value>Agency</value>
@@ -133,7 +133,10 @@
     <value>Contact</value>
   </data>
   <data name="Email" xml:space="preserve">
-    <value>miratea@thakycompany.com</value>
+    <value>ha.hathy@gmail.com</value>
+  </data>
+  <data name="FaceBook" xml:space="preserve">
+    <value>Moringa Tea</value>
   </data>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
@@ -154,7 +157,7 @@
     <value>Online</value>
   </data>
   <data name="Phone" xml:space="preserve">
-    <value>Phone : (+84) 93 78 58 788</value>
+    <value>Phone : (+84) 0937.85.87.88 - (+84) 0905.69.02.88</value>
   </data>
   <data name="Price" xml:space="preserve">
     <value>Price</value>
@@ -164,6 +167,9 @@
   </data>
   <data name="Search" xml:space="preserve">
     <value>Search</value>
+  </data>
+  <data name="Skype" xml:space="preserve">
+    <value>miratea.vn</value>
   </data>
   <data name="Today" xml:space="preserve">
     <value>Today</value>

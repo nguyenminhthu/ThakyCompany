@@ -121,19 +121,22 @@
     <value>Giới thiệu</value>
   </data>
   <data name="AddressValue" xml:space="preserve">
-    <value>Địa chỉ : 11/26 Lý Tự Trọng, Tây Sơn, Pleiku, Gia Lai</value>
+    <value>Địa chỉ : Ấp Nhân Tâm, Huyện Xuyên Mộc, Bà Rịa - Vũng Tàu</value>
   </data>
   <data name="Agency" xml:space="preserve">
     <value>Đại lý</value>
   </data>
   <data name="CompanyName" xml:space="preserve">
-    <value>CƠ SỞ TRÀ THẦN KỲ</value>
+    <value>CƠ SỞ TRÀ CHÙM NGÂY</value>
   </data>
   <data name="Contact" xml:space="preserve">
     <value>Liên hệ</value>
   </data>
   <data name="Email" xml:space="preserve">
-    <value>miratea@thakycompany.com</value>
+    <value>ha.hathy@gmail.com</value>
+  </data>
+  <data name="FaceBook" xml:space="preserve">
+    <value>Moringa Tea</value>
   </data>
   <data name="Home" xml:space="preserve">
     <value>Trang chủ</value>
@@ -154,7 +157,7 @@
     <value>Đang online</value>
   </data>
   <data name="Phone" xml:space="preserve">
-    <value>Điện thoại : (+84) 93 78 58 788</value>
+    <value>Điện thoại : (+84) 0937.85.87.88 - (+84) 0905.69.02.88</value>
   </data>
   <data name="Price" xml:space="preserve">
     <value>Giá</value>
@@ -164,6 +167,9 @@
   </data>
   <data name="Search" xml:space="preserve">
     <value>Tìm kiếm</value>
+  </data>
+  <data name="Skype" xml:space="preserve">
+    <value>miratea.vn</value>
   </data>
   <data name="Today" xml:space="preserve">
     <value>Hôm nay</value>

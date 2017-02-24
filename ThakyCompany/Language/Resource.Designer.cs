@@ -70,7 +70,7 @@ namespace ThakyCompany.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Address: 11/26 Ly Tu Trong Str, Tay Son, PleiKu, Gia Lai.
+        ///   Looks up a localized string similar to Address: Nhân Tâm, Xuyên Mộc, Bà Rịa - Vũng Tàu.
         /// </summary>
         public static string AddressValue {
             get {
@@ -106,11 +106,20 @@ namespace ThakyCompany.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to miratea@thakycompany.com.
+        ///   Looks up a localized string similar to ha.hathy@gmail.com.
         /// </summary>
         public static string Email {
             get {
                 return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Moringa Tea.
+        /// </summary>
+        public static string FaceBook {
+            get {
+                return ResourceManager.GetString("FaceBook", resourceCulture);
             }
         }
         
@@ -169,7 +178,7 @@ namespace ThakyCompany.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Phone : (+84) 93 78 58 788.
+        ///   Looks up a localized string similar to Phone : (+84) 0937.85.87.88 - (+84) 0905.69.02.88.
         /// </summary>
         public static string Phone {
             get {
@@ -201,6 +210,15 @@ namespace ThakyCompany.Language {
         public static string Search {
             get {
                 return ResourceManager.GetString("Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to miratea.vn.
+        /// </summary>
+        public static string Skype {
+            get {
+                return ResourceManager.GetString("Skype", resourceCulture);
             }
         }
         

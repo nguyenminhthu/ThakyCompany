@@ -24,7 +24,7 @@ namespace ThakyCompany.Controllers
             }
 
             var page = context.Pages.Where(x => x.ID == pageId).Select(x => x).FirstOrDefault();
-            ViewBag.Title = "Cơ sở trà Thần Kỳ";
+            ViewBag.Title = "Cơ sở trà Chùm Ngây";
             return View(page);
         }
 
