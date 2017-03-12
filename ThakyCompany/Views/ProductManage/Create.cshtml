@@ -121,7 +121,7 @@
         $(function () {
             $("#save").bind("click", function () {
                 var output = document.getElementById('output');
-                if (output.height != 242 || output.width != 194) {
+                if (output.height > 242 || output.width > 194) {
                     alert("Kích thước hình không đúng. Vui lòng nhập hình đúng kích thước 194px x 242px;");
                     return false;
                 }
