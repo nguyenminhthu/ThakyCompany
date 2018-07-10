@@ -1,0 +1,94 @@
+﻿@model ThakyCompany.Models.QuyTrinh
+
+@{
+    ViewBag.Title = "SỬA QUY TRÌNH";
+    Layout = "/Views/Shared/_ManageLayout.cshtml";
+}
+
+<h4>SỬA QUY TRÌNH</h4>
+
+@using (Html.BeginForm("Edit", "QuyTrinhManage", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true)
+        <div>
+            @Html.ActionLink("Về danh sách", "Index")
+        </div>
+        <hr />
+        TIẾNG VIỆT
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(model => model.ViTitle, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.ViTitle, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ViTitle)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ViDetail, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.ViDetail)
+                @Html.ValidationMessageFor(model => model.ViDetail)
+            </div>
+        </div>
+        <hr />
+        TIẾNG ANH
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(model => model.EnTitle, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.EnTitle, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.EnTitle)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EnDetail, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.EnDetail)
+                @Html.ValidationMessageFor(model => model.EnDetail)
+            </div>
+        </div>
+        <hr />
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Actived, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Actived)
+                @Html.ValidationMessageFor(model => model.Actived)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Lưu" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+    <script>
+
+        function Config(id) {
+            CKEDITOR.replace(id, {
+                filebrowserBrowseUrl: '/ckeditor/ckfinder/ckfinder.html',
+                filebrowserImageBrowseUrl: '/ckeditor/ckfinder/ckfinder.html?Type=Images',
+                filebrowserFlashBrowseUrl: '/ckeditor/ckfinder/ckfinder.html?Type=Flash',
+                filebrowserUploadUrl: '/ckeditor/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Files',
+                filebrowserImageUploadUrl: '/ckeditor/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Images',
+                filebrowserFlashUploadUrl: '/ckeditor/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Flash'
+            });
+        }
+
+        Config("ViDetail");
+        Config("EnDetail");
+        Config("JPDetail");
+    </script>
+}
+
+<div>
+    @Html.ActionLink("Về danh sách tin", "Index")
+</div>
+<hr />

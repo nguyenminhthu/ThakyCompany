@@ -1,0 +1,85 @@
+﻿@model IEnumerable<ThakyCompany.Models.QuyTrinh>
+
+@{
+    ViewBag.Title = "Quản lý quy trình";
+    Layout = "/Views/Shared/_ManageLayout.cshtml";
+}
+
+<h4>QUẢN LÝ QUY TRÌNH</h4>
+
+<p>
+    @Html.ActionLink("Thêm Quy trình mới", "Create")
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            Quy trình
+            @*@Html.DisplayNameFor(model => model.Vi)*@
+        </th>
+
+        <th>
+            Ngày tạo
+        </th>
+        <th>
+            Hiển thị
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.ActionLink(item.ViTitle, "Edit", "QuyTrinhManage", new { id = item.ID }, null)
+            </td>
+
+            <td>
+
+                @Html.ValueFor(modelItem => item.PostDate, "{0:dd/MM/yyyy HH:mm:ss}")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Actived)
+            </td>
+            <td>
+
+                <a href="" onclick="return DoDelete(@item.ID,'@item.ViTitle');">Xóa</a>
+            </td>
+        </tr>
+    }
+</table>
+<script type="text/javascript">
+    $(document).ready(function () {
+        //$('[data-toggle="tooltip"]').tooltip();
+        $('[datatoggle="tooltip"]').tooltip();
+    });
+    function DoDelete(id, newsTitle) {
+        var confirmDelete = confirm("Thực hiện việc xóa quy trình sẽ không thể khôi phục được. Bạn có chắc chắn muốn xóa quy trình : " + newsTitle + " ?");
+        if (confirmDelete) {
+            if (Delete(id)) {
+                //location.reload();
+                return true;
+            }
+        }
+        else {
+            return false;
+        }
+    }
+    function Delete(id) {
+        var objData = new Object();
+        objData.id = id;
+        var deleteResult = false;
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("Delete","QuyTrinhManage")",
+            data: JSON.stringify(objData),
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function (response) {
+                deleteResult = response.success;
+            }
+        });
+        return deleteResult;
+    }
+</script>
