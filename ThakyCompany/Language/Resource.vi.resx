@@ -162,6 +162,9 @@
   <data name="Price" xml:space="preserve">
     <value>Giá</value>
   </data>
+  <data name="Procedure" xml:space="preserve">
+    <value>Quy trình</value>
+  </data>
   <data name="Product" xml:space="preserve">
     <value>Sản phẩm</value>
   </data>

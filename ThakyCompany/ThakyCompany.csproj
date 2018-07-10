@@ -20,6 +20,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -167,6 +169,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ChangeLanguageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\QuyTrinhManageController.cs" />
+    <Compile Include="Controllers\QuyTrinhController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\PagesManageController.cs" />
     <Compile Include="Controllers\NewsManageController.cs" />
@@ -210,6 +214,8 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\QuyTrinhDto.cs" />
+    <Compile Include="Models\QuyTrinh.cs" />
     <Compile Include="Models\VisitorOnline.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\News.cs" />
@@ -310,6 +316,12 @@
     <Content Include="Views\Shared\_ManageLayout.cshtml" />
     <Content Include="Views\PagesManage\Edit.cshtml" />
     <Content Include="Views\PagesManage\Index.cshtml" />
+    <Content Include="Views\Shared\_QuyTrinhMenu.cshtml" />
+    <Content Include="Views\Shared\_Layout_QuyTrinh.cshtml" />
+    <Content Include="Views\QuyTrinh\Detail.cshtml" />
+    <Content Include="Views\QuyTrinhManage\Create.cshtml" />
+    <Content Include="Views\QuyTrinhManage\Edit.cshtml" />
+    <Content Include="Views\QuyTrinhManage\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

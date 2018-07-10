@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using ThakyCompany.Models;
 
-namespace VeSinhNamHoa.Controllers
+namespace ThakyCompany.Controllers
 {
     public class PagesManageController : Controller
     {
