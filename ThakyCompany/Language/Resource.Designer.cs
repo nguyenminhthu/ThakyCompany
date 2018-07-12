@@ -115,6 +115,15 @@ namespace ThakyCompany.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Events.
+        /// </summary>
+        public static string Event {
+            get {
+                return ResourceManager.GetString("Event", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Moringa Tea.
         /// </summary>
         public static string FaceBook {

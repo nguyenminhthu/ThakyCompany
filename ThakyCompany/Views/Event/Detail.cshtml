@@ -1,0 +1,21 @@
+﻿@model ThakyCompany.Models.EventDto
+@using ThakyCompany.Language
+@{
+    ViewBag.Title = Model.Title;
+    Layout = "/Views/Shared/_Layout_Event.cshtml";
+}
+
+<div class="panel panel-default contentMinHeight">
+    <div>
+        <h3 class="panel-heading panel-title boxtitle">
+            @Model.Title
+        </h3>
+    </div>
+    <div class="pagecontent ">
+        <p>
+            @Html.Raw(Model.Detail)
+        </p>
+        @*<h5><strong>@Resource.Price : <span class="price"> @Model.Price </span></strong></h5>
+        <div class="fb-share-button" data-href="@Url.Action("Detail", "Product", new { id = Model.ID }, this.Request.Url.Scheme) " data-layout="button"></div>*@
+    </div>
+</div>

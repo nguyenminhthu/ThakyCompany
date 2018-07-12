@@ -33,21 +33,22 @@ namespace ThakyCompany.Controllers
 
         public ActionResult Detail(int id)
         {
-            var news = database.News.Where(x => x.ID == id).Select(x => x).FirstOrDefault();
+            var news = database.News.Where(x => x.ID == id && x.Actived).Select(x => x).FirstOrDefault();
 
             NewsDto dtoNewsDetail = new NewsDto();
-
-            if (Request.Cookies["language"] != null && Request.Cookies["language"].Value == "vi")
+            if (news != null)
             {
-                dtoNewsDetail.Title = news.ViTitle;
-                dtoNewsDetail.Detail = news.ViDetail;
+                if (Request.Cookies["language"] != null && Request.Cookies["language"].Value == "vi")
+                {
+                    dtoNewsDetail.Title = news.ViTitle;
+                    dtoNewsDetail.Detail = news.ViDetail;
+                }
+                else
+                {
+                    dtoNewsDetail.Title = news.EnTitle;
+                    dtoNewsDetail.Detail = news.EnDetail;
+                }
             }
-            else
-            {
-                dtoNewsDetail.Title = news.EnTitle;
-                dtoNewsDetail.Detail = news.EnDetail;
-            }
-
             return View(dtoNewsDetail);
         }
     }

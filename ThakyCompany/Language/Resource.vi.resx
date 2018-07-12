@@ -135,6 +135,9 @@
   <data name="Email" xml:space="preserve">
     <value>ha.hathy@gmail.com</value>
   </data>
+  <data name="Event" xml:space="preserve">
+    <value>Sự kiện</value>
+  </data>
   <data name="FaceBook" xml:space="preserve">
     <value>Moringa Tea</value>
   </data>

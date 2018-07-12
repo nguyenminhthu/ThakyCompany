@@ -1,0 +1,10 @@
+﻿@using ThakyCompany.Language
+@{
+    Layout = "_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-3">
+        @Html.Action("LoadEvent", "Event")
+    </div>
+    <div class="col-md-9 padding-left-0">@RenderBody()</div>
+</div>

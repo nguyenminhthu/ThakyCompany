@@ -22,5 +22,6 @@ namespace ThakyCompany.Models
         public DbSet<VisitorOnline> VisitorOnline { get; set; }
 
         public DbSet<QuyTrinh> QuyTrinhs { get; set; }
+        public DbSet<Event> Events { get; set; }
     }
 }

@@ -13,7 +13,7 @@ namespace ThakyCompany.Controllers
 
         public ActionResult Index()
         {
-            var quyTrinh = database.QuyTrinhs.FirstOrDefault();
+            var quyTrinh = database.QuyTrinhs.Where(x=>x.Actived).FirstOrDefault();
             return RedirectToAction("Detail", new { id = quyTrinh.ID });
         }
         public ActionResult LoadQuyTrinh()
@@ -38,21 +38,22 @@ namespace ThakyCompany.Controllers
 
         public ActionResult Detail(int id)
         {
-            var QuyTrinh = database.QuyTrinhs.Where(x => x.ID == id).Select(x => x).FirstOrDefault();
+            var quyTrinh = database.QuyTrinhs.Where(x => x.ID == id && x.Actived).Select(x => x).FirstOrDefault();
 
             QuyTrinhDto dtoQuyTrinhDetail = new QuyTrinhDto();
-
-            if (Request.Cookies["language"] != null && Request.Cookies["language"].Value == "vi")
+            if (quyTrinh != null)
             {
-                dtoQuyTrinhDetail.Title = QuyTrinh.ViTitle;
-                dtoQuyTrinhDetail.Detail = QuyTrinh.ViDetail;
+                if (Request.Cookies["language"] != null && Request.Cookies["language"].Value == "vi")
+                {
+                    dtoQuyTrinhDetail.Title = quyTrinh.ViTitle;
+                    dtoQuyTrinhDetail.Detail = quyTrinh.ViDetail;
+                }
+                else
+                {
+                    dtoQuyTrinhDetail.Title = quyTrinh.EnTitle;
+                    dtoQuyTrinhDetail.Detail = quyTrinh.EnDetail;
+                }
             }
-            else
-            {
-                dtoQuyTrinhDetail.Title = QuyTrinh.EnTitle;
-                dtoQuyTrinhDetail.Detail = QuyTrinh.EnDetail;
-            }
-
             return View(dtoQuyTrinhDetail);
         }
     }
