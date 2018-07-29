@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,11 @@ namespace ThakyCompany.Models
 {
     public class ThakyContext : DbContext
     {
-        public ThakyContext()
-            : base("DefaultConnection")
+        //string securityKey = "MoringaVina123!!";
+        public ThakyContext(): base("DefaultConnection")
         {
+            //string connect = Util.Utilities.Decrypt(ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString(), true, securityKey);
+            //this.Database.Connection.ConnectionString = connect;
         }
 
         public DbSet<Page> Pages { get; set; }

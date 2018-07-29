@@ -9,8 +9,8 @@ namespace ThakyCompany.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
-            ContextKey = "ThakyCompany.Models.ApplicationDbContext";
+            AutomaticMigrationsEnabled = true;
+            ContextKey = "ThakyCompany.Models.ThakyContext";
         }
 
         protected override void Seed(ThakyCompany.Models.ApplicationDbContext context)

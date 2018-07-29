@@ -14,7 +14,10 @@ namespace ThakyCompany.Controllers
         public ActionResult Index()
         {
             var tempEvent = database.Events.Where(x=>x.Actived).FirstOrDefault();
-            return RedirectToAction("Detail", new { id = tempEvent.ID });
+            if(tempEvent != null)
+                return RedirectToAction("Detail", new { id = tempEvent.ID });
+            else
+                return RedirectToAction("Detail", new { id = 1 });
         }
         public ActionResult LoadEvent()
         {

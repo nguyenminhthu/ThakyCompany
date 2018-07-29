@@ -14,7 +14,10 @@ namespace ThakyCompany.Controllers
         public ActionResult Index()
         {
             var quyTrinh = database.QuyTrinhs.Where(x=>x.Actived).FirstOrDefault();
-            return RedirectToAction("Detail", new { id = quyTrinh.ID });
+            if (quyTrinh != null)
+                return RedirectToAction("Detail", new { id = quyTrinh.ID });
+            else
+                return RedirectToAction("Detail", new { id = 1 });
         }
         public ActionResult LoadQuyTrinh()
         {
