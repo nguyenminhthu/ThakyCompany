@@ -8,6 +8,35 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <script src="~/ckeditor/ckeditor.js"></script>
+    <style type="text/css">
+        .networks {
+            list-style:none;
+            padding-left:0;
+        }
+            .networks li {
+                display:inline-block ;
+            }
+                .networks li a {
+                    display: block;
+                    height: 38px;
+                    width: 38px;
+                    font-size: 0;
+                    background: url("../../Content/Images/social-sprite.png"), no-repeat;
+                }
+            /*.networks .facebook a {
+                
+            }*/
+            .networks .twitter a {
+                background-position: -38px 0;
+                
+            }
+            .networks .youtube a {
+                background-position: -114px 0;
+            }
+            .networks .skype a {
+                background: url("../../Content/Images/skype-icon.png"), no-repeat;
+            }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -16,7 +45,7 @@
                 <div class="headerbackground">
                     <div class="row">
                         <div class="col-md-3" style="padding-left:30px;">
-                            <a href="/"><img class="img-responsive" alt="Moringavina.com" src="/Content/Images/logo.png" /></a>
+                            <a href="/"><img class="img-responsive" alt="Moringavina.com" src="/Content/Images/logo.jpg" /></a>
                         </div>
                         <div class="col-md-6 col-md-of">
                             <div class="hidden-sm hidden-xs" style="padding-top: 45px; "><img src="/Content/Images/banner_Text.png" /> </div>
@@ -125,10 +154,25 @@
                         <i class="fa fa-home fa-2x"></i> @Resource.AddressValue<br />
                         <i class="fa fa-skype fa-2x"></i> Skype: <a href="skype:@Resource.Skype?chat">@Resource.Skype</a>
                         <i class="fa fa-facebook fa-2x"></i> Facebook: <a href="https://www.facebook.com/ha.thy.18" target="_blank">@Resource.FaceBook</a><br />
-                        <i class="fa fa-envelope-o fa-2x"></i> Email:<a href="mailto:@Resource.Email"> @Resource.Email</a><br/>
+                        <i class="fa fa-envelope-o fa-2x"></i> Email:<a href="mailto:@Resource.Email"> @Resource.Email</a><br />
                         <i class="fa fa-phone fa-2x"></i> @Resource.Phone
-                        <br />
-                        <i class="fa fa-home fa-2x"></i> Website: <a href="http://moringavina.com" target="_blank">http://moringavina.com</a>
+                        <div class="row">
+                            <div class="col-md-6 text-right">
+                                <i class="fa fa-home fa-2x"></i> Website: <a href="http://moringavina.com" target="_blank">http://moringavina.com</a>
+                            </div>
+                            <div class="col-md-6 text-left">
+                                <ul class="networks">
+                                    <li class="facebook"><a href="https://www.facebook.com/ha.thy.18?ref=bookmarks" title="Facebook" target="_blank">Facebook</a></li>
+                                    <li class="twitter"><a href="https://twitter.com/?lang=en" target="_blank" title="Twitter">Twitter</a></li>
+                                    <li class="youtube"><a href="https://www.youtube.com/channel/UC2IrcuQCb5aGmK7bGytMgvg?view_as=subscriber" title="Youtube" target="_blank">YouTube</a></li>
+                                    <li class="skype"><a href="skype:miratea.vn?chat" title="Skype">Skype</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+
+                        
+
                     </footer>
                 </div>
             </div>
